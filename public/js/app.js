@@ -1005,6 +1005,7 @@ var About = __webpack_require__(49);
 var routes = [{ path: '/home', component: Home }, { path: '/about', component: About }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+  mode: 'history',
   routes: routes // short for `routes: routes`
 });
 
