@@ -43635,6 +43635,7 @@ var render = function() {
                 }
               ],
               staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
               attrs: { type: "text", placeholder: "Name" },
               domProps: { value: _vm.list.name },
               on: {
@@ -43646,7 +43647,13 @@ var render = function() {
                 }
               }
             })
-          ])
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "field" }, [
@@ -43663,6 +43670,7 @@ var render = function() {
                 }
               ],
               staticClass: "input",
+              class: { "is-danger": _vm.errors.phone },
               attrs: { type: "number", placeholder: "Phone Number" },
               domProps: { value: _vm.list.phone },
               on: {
@@ -43674,7 +43682,13 @@ var render = function() {
                 }
               }
             })
-          ])
+          ]),
+          _vm._v(" "),
+          _vm.errors.phone
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.phone[0]))
+              ])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "field" }, [
@@ -43691,6 +43705,7 @@ var render = function() {
                 }
               ],
               staticClass: "input",
+              class: { "is-danger": _vm.errors.email },
               attrs: { type: "email", placeholder: "Email" },
               domProps: { value: _vm.list.email },
               on: {
@@ -43702,7 +43717,13 @@ var render = function() {
                 }
               }
             })
-          ])
+          ]),
+          _vm._v(" "),
+          _vm.errors.email
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.email[0]))
+              ])
+            : _vm._e()
         ])
       ]),
       _vm._v(" "),
@@ -43772,6 +43793,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['openmodal'],
@@ -43781,7 +43805,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				name: '',
 				phone: '',
 				email: ''
-			}
+			},
+			errors: {}
 		};
 	},
 
@@ -43795,7 +43820,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			axios.post('/phonebook', this.$data.list).then(function (response) {
 				return _this.close();
 			}).catch(function (error) {
-				return console.log(error);
+				return _this.errors = error.response.data.errors;
 			});
 		}
 	}
