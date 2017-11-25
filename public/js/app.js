@@ -40688,9 +40688,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "panel" }, [
+    return _c("nav", { staticClass: "panel column is-offset-2 is-8" }, [
       _c("p", { staticClass: "panel-heading" }, [
-        _vm._v("\n    repositories\n  ")
+        _vm._v("\n    Phone Book\n    "),
+        _c("button", { staticClass: "button is-link is-outlined" }, [
+          _vm._v("\n      Add new\n    ")
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "panel-block" }, [
@@ -40706,71 +40709,31 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "panel-tabs" }, [
-        _c("a", { staticClass: "is-active" }, [_vm._v("all")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("public")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("private")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("sources")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("forks")])
-      ]),
-      _vm._v(" "),
       _c("a", { staticClass: "panel-block is-active" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fa fa-book" })
+        _c("span", { staticClass: "column is-9" }, [
+          _vm._v("\n    \tbulma\n    ")
         ]),
-        _vm._v("\n    bulma\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fa fa-book" })
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column is-1" }, [
+          _c("i", {
+            staticClass: "has-text-danger fa fa-trash",
+            attrs: { "aria-hidden": "true" }
+          })
         ]),
-        _vm._v("\n    marksheet\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fa fa-book" })
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column is-1" }, [
+          _c("i", {
+            staticClass: "has-text-info fa fa-edit",
+            attrs: { "aria-hidden": "true" }
+          })
         ]),
-        _vm._v("\n    minireset.css\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fa fa-book" })
-        ]),
-        _vm._v("\n    jgthms.github.io\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fa fa-code-fork" })
-        ]),
-        _vm._v("\n    daniellowtw/infboard\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fa fa-code-fork" })
-        ]),
-        _vm._v("\n    mojs\n  ")
-      ]),
-      _vm._v(" "),
-      _c("label", { staticClass: "panel-block" }, [
-        _c("input", { attrs: { type: "checkbox" } }),
-        _vm._v("\n    remember me\n  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "panel-block" }, [
-        _c(
-          "button",
-          { staticClass: "button is-link is-outlined is-fullwidth" },
-          [_vm._v("\n      reset all filters\n    ")]
-        )
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column is-1" }, [
+          _c("i", {
+            staticClass: "has-text-primary fa fa-eye",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
       ])
     ])
   }
