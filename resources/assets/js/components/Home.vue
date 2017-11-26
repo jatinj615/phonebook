@@ -12,13 +12,13 @@
 		  </p>
 		  <div class="panel-block">
 		    <p class="control has-icons-left">
-		      <input class="input is-small" type="text" placeholder="search">
+		      <input class="input is-small" type="text" placeholder="search" v-model="searchQuery">
 		      <span class="icon is-small is-left">
 		        <i class="fa fa-search"></i>
 		      </span>
 		    </p>
 		  </div>
-		  <a class="panel-block is-active" v-for="item,key in list">
+		  <a class="panel-block is-active" v-for="item,key in temp">
 		    <span class="column is-9">
 		    	{{ item.name }}
 		    </span>
@@ -52,12 +52,25 @@
 					updateActive:'',
 					list:{},
 					errors:{},
-					loading:false
+					loading:false,
+					searchQuery:'',
+					temp:''
 				}
 			},
 			mounted(){
-				axios.post('/getData').then((response)=>this.list = response.data)
+				axios.post('/getData').then((response)=>this.list = this.temp = response.data)
 				  .catch((error)=>this.errors = error.response.data.errors);
+			},
+			watch:{
+				searchQuery(){
+					if(this.searchQuery.length > 0) {
+						this.temp = this.list.filter((item) => {
+							return item.name.toLowerCase().indexOf(this.searchQuery.toLowerCase())>-1
+						});
+					} else{
+						this.temp = this.list
+					}
+				}
 			},
 			methods:{
 				openAdd(){
